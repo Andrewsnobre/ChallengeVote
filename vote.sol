@@ -39,7 +39,7 @@ candidates.push(Candidate({
 
 function vote(uint _id) public {
     require(!alreadyVoted[msg.sender],"already voted");
-   // require(_id< candidates.lenght,"invalid candidate");
+    require(_id< candidates.length,"invalid candidate");
  candidates[_id].votes++;
  alreadyVoted[msg.sender] = true;
 
