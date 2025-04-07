@@ -45,6 +45,22 @@ function vote(uint _id) public {
 
 }
 
+function getWinner() public  view returns (string memory name, uint votes){
+uint plus = 0;
+uint idwinner;
+
+for (uint i = 0; i < candidates.length; i++){
+    if(candidates[i].votes > plus) {
+        plus= candidates[i].votes;
+        idwinner = i;
+    }
+
+    name = candidates[idwinner].name;
+    votes = candidates[idwinner].votes;
+
+}
+}
+
 // function getWinner() public  view returns (string memory name, uint votes){
 // uint plus = 0;
 // uint idwinner;
